@@ -1,0 +1,6 @@
+# Готовые файлы (DanceAdmin.exe ~130 МБ, установщик) не кладутся в репозиторий:
+# GitHub не принимает файлы больше 100 МБ. Прикрепляйте их к релизу (Releases → Draft a new release).
+release/
+*.exe
+*.zip
+Thumbs.db

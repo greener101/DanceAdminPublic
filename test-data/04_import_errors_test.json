@@ -1,0 +1,214 @@
+{
+  "format": "DanceAdmin",
+  "schemaVersion": 1,
+  "kind": "migration",
+  "exportedAt": "2026-10-14T09:00:00+03:00",
+  "transitionDate": "2026-10-01",
+  "_comment": "НАМЕРЕННО ОШИБОЧНЫЙ файл для проверки окна предпросмотра импорта. Импортировать ПОСЛЕ 01 и 02. В каждой записи поле _expected описывает ожидаемую реакцию.",
+  "clients": [
+    {
+      "externalId": "E-0001",
+      "lastName": "Маслова",
+      "firstName": "Ольга",
+      "phone": "+79435714375",
+      "_expected": "Дубль: такой телефон и ФИО уже есть в базе"
+    },
+    {
+      "externalId": "E-0002",
+      "lastName": "Волкова",
+      "firstName": "ОКСАНА",
+      "phone": "89286017865",
+      "_expected": "Дубль: тот же телефон в формате 8XXXXXXXXXX и ФИО с ё/регистром — должен найтись"
+    },
+    {
+      "externalId": "E-0003",
+      "lastName": "Тестова",
+      "firstName": "Ошибка",
+      "phone": "8916123",
+      "_expected": "Ошибка: некорректный телефон"
+    },
+    {
+      "externalId": "E-0004",
+      "lastName": "",
+      "firstName": "Без Фамилии",
+      "phone": "+79990000004",
+      "_expected": "Ошибка: пустая фамилия"
+    },
+    {
+      "externalId": "E-0005",
+      "lastName": "Нетфотова",
+      "firstName": "Алла",
+      "phone": "+79990000005",
+      "photo": "photos/clients/NOT_EXISTS.jpg",
+      "_expected": "Предупреждение: файл фото не найден"
+    },
+    {
+      "externalId": "E-0006",
+      "lastName": "Двойникова",
+      "firstName": "Вера",
+      "phone": "+79990000006",
+      "_expected": "OK (первая из двух одинаковых записей)"
+    },
+    {
+      "externalId": "E-0006",
+      "lastName": "Двойникова",
+      "firstName": "Вера",
+      "phone": "+79990000006",
+      "_expected": "Ошибка: повтор externalId внутри файла"
+    },
+    {
+      "externalId": "E-0007",
+      "lastName": "Корректная",
+      "firstName": "Запись",
+      "phone": "+7 (999) 000-00-07",
+      "birthDate": "1995-02-30",
+      "_expected": "Ошибка: несуществующая дата рождения (телефон с маской — должен принять)"
+    },
+    {
+      "externalId": "E-0008",
+      "lastName": "Нормальная",
+      "firstName": "Клиентка",
+      "phone": "+79990000008",
+      "_expected": "OK — единственная полностью корректная запись"
+    }
+  ],
+  "memberships": [
+    {
+      "externalId": "EM-01",
+      "clientId": "E-0008",
+      "typeId": "MT-08",
+      "name": "8 занятий",
+      "lessonsTotal": 8,
+      "price": 4000,
+      "purchasedAt": "2026-09-20T18:00+03:00",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-19",
+      "usedBeforeMigration": 9,
+      "isMigrated": true,
+      "_expected": "Ошибка: использовано 9 из 8"
+    },
+    {
+      "externalId": "EM-02",
+      "clientId": "C-9999",
+      "typeId": "MT-08",
+      "name": "8 занятий",
+      "lessonsTotal": 8,
+      "price": 4000,
+      "purchasedAt": "2026-09-20T18:00+03:00",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-19",
+      "usedBeforeMigration": 2,
+      "isMigrated": true,
+      "_expected": "Ошибка: клиент C-9999 не найден"
+    },
+    {
+      "externalId": "EM-03",
+      "clientId": "E-0008",
+      "typeId": "MT-99",
+      "name": "???",
+      "lessonsTotal": 8,
+      "price": 4000,
+      "purchasedAt": "2026-09-20T18:00+03:00",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-19",
+      "usedBeforeMigration": 2,
+      "isMigrated": true,
+      "_expected": "Ошибка: неизвестный тип абонемента MT-99"
+    },
+    {
+      "externalId": "EM-04",
+      "clientId": "E-0008",
+      "typeId": "MT-08",
+      "name": "8 занятий",
+      "lessonsTotal": 8,
+      "price": 4000,
+      "purchasedAt": "2026-09-20T18:00+03:00",
+      "startDate": "2026-09-20",
+      "endDate": "2026-09-10",
+      "usedBeforeMigration": 2,
+      "isMigrated": true,
+      "_expected": "Ошибка: дата окончания раньше даты начала"
+    },
+    {
+      "externalId": "EM-05",
+      "clientId": "E-0008",
+      "typeId": "MT-08",
+      "name": "8 занятий",
+      "lessonsTotal": 8,
+      "price": 4000,
+      "purchasedAt": "2026-10-05T18:00+03:00",
+      "startDate": "2026-10-05",
+      "endDate": "2026-11-03",
+      "usedBeforeMigration": 1,
+      "isMigrated": true,
+      "_expected": "Предупреждение: перенесённый абонемент куплен ПОСЛЕ даты перехода 01.10.2026"
+    }
+  ],
+  "payments": [
+    {
+      "externalId": "EP-01",
+      "clientId": "E-0008",
+      "membershipId": "EM-01",
+      "purpose": "membership",
+      "amount": 4500,
+      "paidAt": "2026-09-20T18:00+03:00",
+      "method": "cash",
+      "isMigrated": true,
+      "_expected": "Ошибка/предупреждение: оплачено 4 500 ₽ больше цены 4 000 ₽"
+    },
+    {
+      "externalId": "EP-02",
+      "clientId": "E-0008",
+      "membershipId": null,
+      "purpose": "other",
+      "amount": -300,
+      "paidAt": "2026-09-21T18:00+03:00",
+      "method": "cash",
+      "isMigrated": true,
+      "_expected": "Ошибка: отрицательная сумма (возврат оформляется отдельной операцией)"
+    },
+    {
+      "externalId": "EP-03",
+      "clientId": "E-0008",
+      "membershipId": null,
+      "purpose": "other",
+      "amount": 500,
+      "paidAt": "2026-09-21T18:00+03:00",
+      "method": "bitcoin",
+      "isMigrated": true,
+      "_expected": "Ошибка: неизвестный способ оплаты"
+    }
+  ],
+  "freezes": [
+    {
+      "externalId": "EF-01",
+      "membershipId": "M-00002",
+      "clientId": "C-0002",
+      "fromDate": "2026-10-01",
+      "toDate": "2026-10-30",
+      "actualToDate": null,
+      "reason": "Отпуск",
+      "_expected": "Ошибка: 30 дней заморозки — больше лимита на абонемент (12 дней)"
+    },
+    {
+      "externalId": "EF-02",
+      "membershipId": "M-00002",
+      "clientId": "C-0002",
+      "fromDate": "2026-10-20",
+      "toDate": "2026-10-15",
+      "actualToDate": null,
+      "reason": "Болезнь",
+      "_expected": "Ошибка: дата окончания заморозки раньше начала"
+    },
+    {
+      "externalId": "EF-03",
+      "membershipId": "EM-02",
+      "clientId": "C-9999",
+      "fromDate": "2026-10-20",
+      "toDate": "2026-10-25",
+      "actualToDate": null,
+      "reason": "",
+      "_expected": "Ошибка: абонемент не найден / пустая причина"
+    }
+  ]
+}
