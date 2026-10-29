@@ -70,6 +70,11 @@ the full license texts follow.
    автор SQLite передал код в общественное достояние
    https://www.sqlite.org/copyright.html
 
+12. Emoji.Wpf 0.3.4 и Stfu 0.1.1 (цветные смайлики в сообщениях)
+   License:   WTFPL (Do What The F*ck You Want To Public License, Version 2)
+   Copyright (c) Sam Hocevar
+   https://github.com/samhocevar/emoji.wpf
+
 ==============================================================================
 MIT LICENSE
 ==============================================================================
