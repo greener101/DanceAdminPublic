@@ -1,10 +1,10 @@
 {
     "version":  "1.3.0b",
-    "build":  160,
+    "build":  163,
     "channel":  "beta",
     "releasedAt":  "2026-11-18",
-    "notes":  "Версия 1.3.0b:\r\n• Поле «Группа» в окне «Новый клиент / Изменить клиента» — под возрастной категорией, с вариантом «без группы».\r\n• Исправлено: пункт «Перенос данных» сразу появляется в меню после импорта настроек.",
-    "setupUrl":  "https://github.com/greener101/DanceAdminPublic/releases/download/v1.3.0-beta.160/DanceAdmin_Setup_1.3.0b-160.exe",
-    "setupSha256":  "1558c0c77d6bee3692e7c7f0777dcbc0b9c630e97b5fc131c72c99a0a496bf39",
-    "releasePage":  "https://github.com/greener101/DanceAdminPublic/releases/tag/v1.3.0-beta.160"
+    "notes":  "Версия 1.3.0b:\r\n• Отчёт смены: разделы «Иная оплата» и «Иной расход» появляются, только если в них есть записи.\r\n• Исправлено: о новых версиях программа сообщает при каждом входе и каждые 4 часа, а не раз в сутки.\r\n• Исправлено: при импорте клиентам без возрастной категории больше не ставится «Взрослые».\r\n• Поле «Группа» в окне «Новый клиент / Изменить клиента» — под возрастной категорией, с вариантом «без группы».\r\n• Исправлено: пункт «Перенос данных» сразу появляется в меню после импорта настроек.",
+    "setupUrl":  "https://github.com/greener101/DanceAdminPublic/releases/download/v1.3.0-beta.163/DanceAdmin_Setup_1.3.0b-163.exe",
+    "setupSha256":  "7079ed674c34e2d88e02db9eb09f47b51b5e2d6978d5eef8911a27daba07798d",
+    "releasePage":  "https://github.com/greener101/DanceAdminPublic/releases/tag/v1.3.0-beta.163"
 }
